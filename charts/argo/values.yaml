@@ -19,7 +19,6 @@ controller:
   name: workflow-controller
   workflowNamespaces:
     - default
-    - new-vendor
   instanceID:
     # `instanceID.enabled` configures the controller to filter workflow submissions
     # to only those which have a matching instanceID attribute.
@@ -39,7 +38,7 @@ ui:
   # Enables ability to SSH into pod using web UI
   enableWebConsole: false
   serviceType: LoadBalancer
-  serviceAccount: argo-ui-vendor
+  serviceAccount: argo-ui
   # Annotations to be applied to the UI Service
   serviceAnnotations: {}
 
@@ -57,7 +56,6 @@ artifactRepository:
       # name: <releaseName>-minio
       key: secretkey
     insecure: true
-    insecure2: true
     # bucket:
     # endpoint:
 
@@ -67,4 +65,4 @@ minio:
   install: false
   defaultBucket:
     enabled: true
-    name: argo-artifacts-new-vendor
+    name: argo-artifacts
